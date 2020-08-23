@@ -8,6 +8,6 @@ class TestController extends Controller
 {
     //
     public function seed(){
-
+        
     }
 }
