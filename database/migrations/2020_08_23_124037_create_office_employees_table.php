@@ -15,7 +15,10 @@ class CreateOfficeEmployeesTable extends Migration
     {
         Schema::create('office_employees', function (Blueprint $table) {
             $table->id();
+            $table->foreignId("experience_id")->nullable();
             $table->timestamps();
+
+            $table->foreign("experience_id")->references("id")->on("experiences");
         });
     }
 

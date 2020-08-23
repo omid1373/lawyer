@@ -15,6 +15,8 @@ class CreateVerificationsTable extends Migration
     {
         Schema::create('verifications', function (Blueprint $table) {
             $table->id();
+            $table->String('mobile_number');
+            $table->String('OTP');
             $table->timestamps();
         });
     }
