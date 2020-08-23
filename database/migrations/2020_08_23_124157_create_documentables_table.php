@@ -11,11 +11,18 @@ class CreateDocumentablesTable extends Migration
      *
      * @return void
      */
+    private $enumTypes = [''];
+
     public function up()
     {
         Schema::create('documentables', function (Blueprint $table) {
             $table->id();
+            $table->foreignId("document_id")->nullable();
+            $table->nullableMorphs('documentable');
+            $table->enum('type' , $this->enumTypes);
             $table->timestamps();
+
+            $table->foreign("document_id")->references("id")->on("documents");
         });
     }
 
