@@ -16,7 +16,8 @@ class CreateOnlinesTable extends Migration
         Schema::create('onlines', function (Blueprint $table) {
             $table->id();
             $table->foreignId("user_id")->nullable();
-            $table->timestamps();
+            $table->timestamp('start')->nullable();
+            $table->timestamp('end')->nullable();
 
             $table->foreign("user_id")->references("id")->on("users");
         });

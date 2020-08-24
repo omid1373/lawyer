@@ -18,7 +18,6 @@ class CreateJudgesTable extends Migration
             $table->foreignId("experience_id")->nullable();
             $table->string('organization')->nullable();
             $table->string('branch')->nullable();
-            $table->boolean('is_Judiciary')->nullable();
             $table->date('from')->nullable();
             $table->date('to')->nullable();
             $table->string('termination_reason')->nullable();
