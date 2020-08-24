@@ -11,16 +11,20 @@ class CreateLawyersTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::create('lawyers', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId("experience_id")->nullable();
-            $table->timestamps();
-
-            $table->foreign("experience_id")->references("id")->on("experiences");
-        });
-    }
+//    public function up()
+//    {
+//        Schema::create('lawyers', function (Blueprint $table) {
+//            $table->id();
+//            $table->string('')->nullable();
+//            $table->string('')->nullable();
+//            $table->string('')->nullable();
+//            $table->string('')->nullable();
+//            $table->foreignId("experience_id")->nullable();
+//            $table->timestamps();
+//
+//            $table->foreign("experience_id")->references("id")->on("experiences");
+//        });
+//    }
 
     /**
      * Reverse the migrations.

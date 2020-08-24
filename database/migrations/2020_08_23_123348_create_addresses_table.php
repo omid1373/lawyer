@@ -16,6 +16,16 @@ class CreateAddressesTable extends Migration
         Schema::create('addresses', function (Blueprint $table) {
             $table->id();
             $table->foreignId("party_id")->nullable();
+            $table->string("type")->nullable(); // todo : put ENUM
+            $table->string("country")->nullable();
+            $table->string("province")->nullable();
+            $table->string("town")->nullable();
+            $table->string("city")->nullable();
+            $table->string("zip_code")->nullable();
+            $table->string("address")->nullable();
+            $table->dateTime("residence_start_date")->nullable();
+            $table->string("city_code")->nullable();
+            $table->string("telephone_number")->nullable();
             $table->timestamps();
 
             $table->foreign("party_id")->references("id")->on("parties");

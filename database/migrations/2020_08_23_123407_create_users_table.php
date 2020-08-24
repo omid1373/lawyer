@@ -16,6 +16,9 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->foreignId("party_id")->nullable();
+            $table->date('contract_agreement_date')->nullable();
+            $table->string("inquiry_reference")->nullable(); // مرجع صدور
+            $table->dateTime("inquiry_date")->nullable();
             $table->timestamps();
 
             $table->foreign("party_id")->references("id")->on("parties");
