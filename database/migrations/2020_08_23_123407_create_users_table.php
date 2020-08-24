@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->date('contract_agreement_date')->nullable();
             $table->string("inquiry_reference")->nullable(); // مرجع صدور
             $table->dateTime("inquiry_date")->nullable();
+            $table->boolean('educational_mode')->nullable();
             $table->timestamps();
 
             $table->foreign("party_id")->references("id")->on("parties");
