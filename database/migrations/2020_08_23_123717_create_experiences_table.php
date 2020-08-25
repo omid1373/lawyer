@@ -17,7 +17,10 @@ class CreateExperiencesTable extends Migration
             $table->id();
             $table->foreignId("user_id")->nullable();
             $table->morphs('experienceable');
+            $table->date('from')->nullable();
+            $table->date('to')->nullable();
             $table->timestamps();
+
             $table->foreign("user_id")->references("id")->on("users");
         });
     }
