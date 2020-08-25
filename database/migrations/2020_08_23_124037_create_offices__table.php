@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOfficeEmployeesTable extends Migration
+class CreateOfficesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,11 @@ class CreateOfficeEmployeesTable extends Migration
      */
     public function up()
     {
-        Schema::create('office_employees', function (Blueprint $table) {
+        Schema::create('offices', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("experience_id")->nullable();
             $table->string('organization')->nullable();
             $table->string('position')->nullable();
             $table->string('termination_reason')->nullable();            $table->timestamps();
-
-            $table->foreign("experience_id")->references("id")->on("experiences");
         });
     }
 
@@ -31,6 +28,6 @@ class CreateOfficeEmployeesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('office_employees');
+        Schema::dropIfExists('offices');
     }
 }
