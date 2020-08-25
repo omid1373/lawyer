@@ -17,8 +17,6 @@ class CreateJudgementsTable extends Migration
             $table->id();
             $table->string('organization')->nullable();
             $table->string('branch')->nullable();
-            $table->date('from')->nullable();
-            $table->date('to')->nullable();
             $table->string('termination_reason')->nullable();
             $table->timestamps();
         });

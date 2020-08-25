@@ -18,8 +18,6 @@ class CreateOfficeEmployeesTable extends Migration
             $table->foreignId("experience_id")->nullable();
             $table->string('organization')->nullable();
             $table->string('position')->nullable();
-            $table->date('from')->nullable();
-            $table->date('to')->nullable();
             $table->string('termination_reason')->nullable();            $table->timestamps();
 
             $table->foreign("experience_id")->references("id")->on("experiences");
