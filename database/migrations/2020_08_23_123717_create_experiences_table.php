@@ -16,8 +16,8 @@ class CreateExperiencesTable extends Migration
         Schema::create('experiences', function (Blueprint $table) {
             $table->id();
             $table->foreignId("user_id")->nullable();
+            $table->morphs('experienceable');
             $table->timestamps();
-
             $table->foreign("user_id")->references("id")->on("users");
         });
     }
