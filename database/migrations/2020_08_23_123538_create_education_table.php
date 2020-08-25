@@ -20,7 +20,7 @@ class CreateEducationTable extends Migration
             $table->foreignId("user_id")->nullable();
             $table->enum('grade', $this->grades)->nullable();
             $table->string('field')->nullable();
-            $table->string('subfield')->nullable(); // todo : subfield->'Gerayesh'
+            $table->string('subfield')->nullable();
             $table->float('average')->nullable();
             $table->integer('from')->nullable();
             $table->integer('to')->nullable();

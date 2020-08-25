@@ -11,14 +11,17 @@ class CreatePublicationsTable extends Migration
      *
      * @return void
      */
+    private $categories = ['book' , 'article', 'thesis' , 'other'];
+
     public function up()
     {
         Schema::create('publications', function (Blueprint $table) {
             $table->id();
             $table->string('title')->nullable();
             $table->string('author')->nullable();
-            $table->string('author')->nullable();
-            $table->string('author')->nullable();
+            $table->string('rank')->nullable();
+            $table->enum('category', $this->categories)->nullable();
+            $table->smallInteger('year')->nullable();
             $table->foreignId("user_id")->nullable();
             $table->timestamps();
 

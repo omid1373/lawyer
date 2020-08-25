@@ -11,13 +11,15 @@ class CreateAddressesTable extends Migration
      *
      * @return void
      */
+    private $address_types = ['home' , 'work', 'licence'];
+
     public function up()
     {
         Schema::create('addresses', function (Blueprint $table) {
             $table->id();
             $table->foreignId("party_id")->nullable();
-            $table->string("type")->nullable(); // todo : put ENUM
-            $table->string("country")->nullable();
+            $table->enum("type",$this->address_types)->nullable();
+            $table->string("country")->default('Islamic Republic of Iran');
             $table->string("province")->nullable();
             $table->string("town")->nullable();
             $table->string("city")->nullable();
@@ -27,6 +29,8 @@ class CreateAddressesTable extends Migration
             $table->string("city_code")->nullable();
             $table->string("telephone_number")->nullable();
             $table->timestamps();
+
+            $table->index('type');
 
             $table->foreign("party_id")->references("id")->on("parties");
         });

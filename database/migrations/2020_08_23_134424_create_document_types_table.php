@@ -16,7 +16,7 @@ class CreateDocumentTypesTable extends Migration
         Schema::create('document_types', function (Blueprint $table) {
             $table->id();
             $table->foreignId("document_id")->nullable();
-            $table->foreignId("type_id")->nullable();
+            $table->string('type_id')->nullable();
             $table->timestamps();
 
             $table->foreign("document_id")->references("id")->on("documents");
