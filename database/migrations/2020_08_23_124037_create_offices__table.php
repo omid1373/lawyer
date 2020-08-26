@@ -17,7 +17,8 @@ class CreateOfficesTable extends Migration
             $table->id();
             $table->string('organization')->nullable();
             $table->string('position')->nullable();
-            $table->string('termination_reason')->nullable();            $table->timestamps();
+            $table->string('termination_reason')->nullable();
+            $table->timestamps();
         });
     }
 
