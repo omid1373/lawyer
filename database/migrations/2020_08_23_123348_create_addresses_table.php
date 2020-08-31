@@ -17,7 +17,8 @@ class CreateAddressesTable extends Migration
     {
         Schema::create('addresses', function (Blueprint $table) {
             $table->id();
-            $table->foreignId("party_id")->nullable();
+//            $table->foreignId("party_id")->nullable();
+            $table->nullableMorphs("addressable");
             $table->enum("type",$this->address_types)->nullable();
             $table->string("country")->default('Islamic Republic of Iran');
             $table->string("province")->nullable();
@@ -32,7 +33,7 @@ class CreateAddressesTable extends Migration
 
             $table->index('type');
 
-            $table->foreign("party_id")->references("id")->on("parties");
+//            $table->foreign("party_id")->references("id")->on("parties");
         });
     }
 

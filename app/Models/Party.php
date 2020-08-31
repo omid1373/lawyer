@@ -10,4 +10,7 @@ class Party extends Model
     public function user(){
         return $this->hasOne('App\Models\User');
     }
+    public function documents(){
+        return $this->morphMany('App\Models\Document','documentable');
+    }
 }

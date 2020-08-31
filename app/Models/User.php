@@ -7,6 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class User extends Model
 {
     //
+    public function party(){
+        return $this->belongsTo('App\Models\Party');
+    }
     public function teachings(){
         return $this->hasMany('App\Models\Teaching');
     }
@@ -20,7 +23,7 @@ class User extends Model
         return $this->hasMany('App\Models\Experience');
     }
     public function addresses(){
-        return $this->hasMany('App\Models\Address');
+        return $this->morphMany('App\Models\Address' , 'addressable');
     }
     public function onlines(){
         return $this->hasMany('App\Models\Online');
