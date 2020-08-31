@@ -19,8 +19,14 @@ class User extends Model
     public function educations(){
         return $this->hasMany('App\Models\Education');
     }
-    public function experiences(){
-        return $this->hasMany('App\Models\Experience');
+    public function judgements(){
+        return $this->hasMany('App\Models\Judge');
+    }
+    public function offices(){
+        return $this->hasMany('App\Models\Office');
+    }
+    public function licence(){
+        return $this->hasMany('App\Models\Licence');
     }
     public function addresses(){
         return $this->morphMany('App\Models\Address' , 'addressable');
