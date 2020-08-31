@@ -7,10 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 class Licence extends Model
 {
     //
-    public function experience(){
-        return $this->morphOne('App\Models\Experience','experienceable');
+    public function user(){
+        return $this->belongsTo('App\Models\User');
     }
     public function address(){
         return $this->morphOne('App\Models\Address' , 'addressable');
+    }
+    public function documents(){
+        return $this->morphMany('App\Models\Document','documentable');
     }
 }

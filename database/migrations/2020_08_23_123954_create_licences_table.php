@@ -18,8 +18,8 @@ class CreateLicencesTable extends Migration
             $table->foreignId("user_id")->nullable();
             $table->string("licence_number")->nullable();
             $table->string("expertise")->nullable();
-//            $table->dateTime("issued_date")->nullable(); -> From
-//            $table->dateTime("expiration_date")->nullable(); -> To
+            $table->dateTime("from")->nullable();// issued_date
+            $table->dateTime("to")->nullable();// expiration_date
             $table->integer("suggested_tasks_number")->nullable();
             $table->integer("proposed_tasks_number")->nullable();
             $table->integer("in_progress_tasks_number")->nullable();

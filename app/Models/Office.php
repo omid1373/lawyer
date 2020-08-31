@@ -7,7 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Office extends Model
 {
     //
-    public function experience(){
-        return $this->morphOne('App\Models\Experience','experienceable');
+    public function user(){
+        return $this->belongsTo('App\Models\User');
+    }
+    public function documents(){
+        return $this->morphMany('App\Models\Document','documentable');
     }
 }

@@ -30,8 +30,8 @@ class LoginController extends Controller
         $nationalId = $request->input('national_id');
         $licenseNumber = $request->input('license_number');
         $userLogin = Party::where('national_id', $nationalId)
-            ->whereHas('user.license', function (Builder $q) use ($licenseNumber) {
-                $q->where('license_number', '=', $licenseNumber);
+            ->whereHas('user.licence', function (Builder $q) use ($licenseNumber) {
+                $q->where('licence_number' , '=' , $licenseNumber);
             })
             ->first();
         if (!empty($userLogin)) {

@@ -15,10 +15,15 @@ class CreateOfficesTable extends Migration
     {
         Schema::create('offices', function (Blueprint $table) {
             $table->id();
+            $table->foreignId("user_id")->nullable();
             $table->string('organization')->nullable();
             $table->string('position')->nullable();
+            $table->dateTime("from")->nullable();
+            $table->dateTime("to")->nullable();
             $table->string('termination_reason')->nullable();
             $table->timestamps();
+
+            $table->foreign("user_id")->references("id")->on("users");
         });
     }
 
