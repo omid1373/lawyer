@@ -61,11 +61,11 @@ class LoginController extends Controller
                 $licence = $user->licence()->create([
                     'educational_purpose' => $apiData['expertise'],
                     'licence_number' => $apiData['licence_number'],
-                    'issued_date' => date('Y-m-d', $apiData['issued_date']),
-                    'expiration_date' => date('Y-m-d', $apiData['expiration_date'])
+                    'from' => date('Y-m-d', $apiData['issued_date']), //issued_date
+                    'to' => date('Y-m-d', $apiData['expiration_date']) //expiration_date
                 ]);
 
-                $address = $licence->addresses()->create([
+                $address = $licence->address()->create([
                     'address' => $apiData['address'],
                     'province' => $apiData['province'],
                     'town' => $apiData['town'],
