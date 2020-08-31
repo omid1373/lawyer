@@ -8,7 +8,7 @@ class Document extends Model
 {
     //
     public function types(){
-        return $this->belongsToMany('App\Models\Type' , 'document_types');
+        return $this->belongsTo('App\Models\Type');
     }
     public function documentable()
     {

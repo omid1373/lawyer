@@ -7,4 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Teaching extends Model
 {
     //
+    public function user(){
+        return $this->belongsTo('App\Models\User');
+    }
 }
