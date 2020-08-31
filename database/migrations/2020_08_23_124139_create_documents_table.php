@@ -15,7 +15,7 @@ class CreateDocumentsTable extends Migration
     {
         Schema::create('documents', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('type_id');
+            $table->string('type_id');
             $table->string('name');
             $table->string('path')->nullable();
             $table->string('mime_type');
