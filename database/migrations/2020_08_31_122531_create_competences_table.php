@@ -15,8 +15,8 @@ class CreateCompetencesTable extends Migration
     {
         Schema::create('competences', function (Blueprint $table) {
             $table->id();
-            $table->text('competence');
             $table->foreignId('competence_field_id');
+            $table->text('competence');
 
             $table->foreign('competence_field_id')->references('id')->on('competence_fields');
         });

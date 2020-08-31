@@ -14,10 +14,10 @@ class CreateLicenceCompetencesTable extends Migration
     public function up()
     {
         Schema::create('licence_competences', function (Blueprint $table) {
-            $table->foreignId('license_id');
+            $table->foreignId('licence_id');
             $table->foreignId('competence_id');
 
-            $table->foreign('license_id')->references('id')->on('licenses');
+            $table->foreign('licence_id')->references('id')->on('licences');
             $table->foreign('competence_id')->references('id')->on('competences');
         });
     }
