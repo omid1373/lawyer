@@ -12,9 +12,9 @@ class LicenceController extends Controller
         try {
             $userId = $request->route('user_id');
             $licence = User::find($userId)->educations()->get();
-            return response()->json(['teachings' => $educations], 200);
+            return response()->json(['licence' => $licence], 200);
         }catch (\Exception $e){
-            return response()->json(['message'=>'Unable to select educations' , 'error' => $e->getTraceAsString()],400);
+            return response()->json(['message'=>'Unable to select licences' , 'error' => $e->getTraceAsString()],400);
         }
     }
 }
